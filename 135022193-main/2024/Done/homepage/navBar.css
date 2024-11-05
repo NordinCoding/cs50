@@ -1,0 +1,18 @@
+.nav {
+    --bs-nav-link-hover-color: white;
+}
+
+.navBar {
+    background-color: #71ccff;
+    display: block;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color:black;
+    background-color:#d7f1ff;
+}
+
+.nav-pills {
+    --bs-nav-pills-link-active-color: black;
+    --bs-nav-pills-link-active-bg: white;
+}

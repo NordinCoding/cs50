@@ -1,0 +1,121 @@
+#header {
+    position:absolute;
+    top: 10%;
+    left: 45.5%;
+}
+
+#cContainer {
+    position:absolute;
+    top:20%;
+    left:17%;
+    width:500px;
+    height:200px;
+    background-color: #d7f1ff;
+    border-radius: 45px;
+}
+
+#pContainer {
+    position:absolute;
+    top:20%;
+    left:60%;
+    width:500px;
+    height:200px;
+    background-color: #d7f1ff;
+    border-radius: 45px;
+}
+
+#h5Container {
+    position:absolute;
+    top:45%;
+    left:17%;
+    width:500px;
+    height:200px;
+    background-color: #d7f1ff;
+    border-radius: 45px;
+}
+
+#cssContainer {
+    position:absolute;
+    top:45%;
+    left:60%;
+    width:500px;
+    height:200px;
+    background-color: #d7f1ff;
+    border-radius: 45px;
+}
+
+#jsContainer {
+    position:absolute;
+    top:70%;
+    left:17%;
+    width:500px;
+    height:200px;
+    background-color: #d7f1ff;
+    border-radius: 45px;
+}
+
+#C_Logo {
+    position:absolute;
+    width:22%;
+    top:20%;
+    left:5%;
+}
+
+#cHead {
+    position:absolute;
+    top:65%;
+    left:30%;
+}
+
+
+#Python_Logo {
+    position:absolute;
+    width:22%;
+    top:20%;
+    left:5%;
+}
+
+#pHead {
+    position:absolute;
+    top:65%;
+    left:30%;
+}
+
+#CSS_Logo {
+    position:absolute;
+    width:22%;
+    top:20%;
+    left:5%;
+}
+
+#cssHead {
+    position:absolute;
+    top:65%;
+    left:30%;
+}
+
+#HTML5_Logo {
+    position:absolute;
+    width:22%;
+    top:20%;
+    left:5%;
+}
+
+#h5Head {
+    position:absolute;
+    top:65%;
+    left:30%;
+}
+
+#JS_Logo {
+    position:absolute;
+    width:22%;
+    top:20%;
+    left:5%;
+}
+
+#jsHead {
+    position:absolute;
+    top:65%;
+    left:30%;
+}

@@ -1,0 +1,73 @@
+.homepage {
+    background-color:#cdedff;
+}
+
+.carousel-item {
+    height:55rem;
+    background:black;
+    color:white;
+    position: relative;
+}
+
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 50px;
+}
+
+
+#welcome {
+    text-align: center;
+    margin-top: 5%;
+}
+
+#img1 {
+    position: absolute;
+    background-size:cover;
+    background-position:center -300px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0.5;
+}
+
+#img2 {
+    position: absolute;
+    background-size:cover;
+    background-position:center bottom -400px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0.5;
+}
+
+#img3 {
+    position: absolute;
+    background-size:cover;
+    background-position:center bottom -400px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0.5;
+}
+
+body {
+    background-color: white;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 1000px;
+}
+
+li::marker {
+    content: '';
+}

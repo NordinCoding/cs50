@@ -1,0 +1,23 @@
+#discountChecker {
+    position:absolute;
+    left:5%;
+    top:17%
+}
+
+#ERblink {
+    position:absolute;
+    left:5%;
+    top:45%;
+}
+
+#customController {
+    position:absolute;
+    left:5%;
+    top:83%;
+}
+
+#blinkDetection {
+    position:absolute;
+    left:5%;
+    top:17%
+}

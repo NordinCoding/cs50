@@ -1,0 +1,33 @@
+#aboutMeimg {
+    width: 40%;
+    position: absolute;
+    top: 14%;
+    left: 10%;
+}
+
+#aboutHead {
+    position: absolute;
+    top: 15%;
+    left: 52%;
+    font-size:200%;
+}
+
+#aboutsHead {
+    position: absolute;
+    top: 20%;
+    left: 52%;
+    font-size:110%;
+}
+
+#aboutP {
+    position: absolute;
+    top: 25%;
+    left: 52%;
+    font-size:100%;
+}
+
+#details {
+    position: absolute;
+    top: 73%;
+    left: 10%;
+}

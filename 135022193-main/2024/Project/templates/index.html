@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container">
+        <div class="urlInput">
+            <h1 style="text-align:center; color:white;">Start Checking</h1>
+            <form style="text-align:center;" action="/getURL", method="POST">
+                <input type="text" placeholder="Check Product" name="URL">
+                <br>
+                <!--NOT ALLOWED TO PRESS UNLESS VALID URL IS INSERTED-->
+                <button class="button searchButton" type="submit">Search</button>
+            </form>
+        </div>
+            <div class="innerContainer">
+                <button class="button refreshButton" id="refreshButton" type="button">Refresh</button>
+                    <table id="productTable" class="table table-dark">
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Current price</th>
+                            <th scope="col">Original Price</th>
+                            <th scope="col">Savings</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for product in products %}
+                            <tr id="product-{{ product.id }}">
+                                <td
+                                    style="display: flex; justify-content: space-between; align-items: center;">
+                                    <a target="_blank" class="productName" id="name-{{ product.id }}" href="{{product["URL"]}}">{{product["name"]}}</a>
+                                    <button class="button removeButton" onclick="removeRow(this)" style="margin-left: 20px; ">Remove</button>
+                                </td>
+                                <td id="currentPrice-{{ product.id }}">{{ "€%.2f"|format(product["currentPrice"]) }}</td>
+                                <td id="ogPrice-{{ product.id }}">{{ "€%.2f"|format(product["ogPrice"]) }}</td>
+                                <td id="savings-{{ product.id }}">{{ "€%.2f"|format(product["ogPrice"] - product["currentPrice"]) }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+
+        function removeRow(button) {
+            var row = button.closest('tr')
+            var rowData = { id: row.querySelector('.productName').innerText}
+            console.log(rowData)
+            fetch('/removeRow', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(rowData)
+            });
+            row.remove()
+        }
+
+        document.getElementById('refreshButton').addEventListener('click', function() {
+            fetch('/api/get_prices')
+            .then(response => response.json())
+            .then(data => {
+
+                // Loop through updated product data
+                data.forEach(product => {
+                    const nameCell = document.getElementById(`name-${product.id}`);
+                    const currentPriceCell = document.getElementById(`currentPrice-${product.id}`);
+                    const ogPriceCell = document.getElementById(`ogPrice-${product.id}`);
+
+                    if (nameCell) nameCell.textContent = product.name;
+                    if (currentPriceCell) currentPriceCell.textContent = `€${product.currentPrice.toFixed(2)}`;
+                    if (ogPriceCell) ogPriceCell.textContent = `€${product.ogPrice.toFixed(2)}`;
+                })
+            })
+            .catch(error => console.error('Error fetching updated prices:', error))
+        })
+    </script>
+{% endblock %}

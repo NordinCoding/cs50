@@ -1,0 +1,3 @@
+I would get the average of energy, valence and danceability individually and see which moods 2 are a closest match in all 3 categories
+
+i think it would be better to take the moods/genres of each song in the top 100 and see which 2 are the most common.

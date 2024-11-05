@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>
+                    In 2009, what video game was released that created an interely new genre based on unforgiving RPG gameplay and difficult bossfights:
+                </h3>
+                    <button id="skyrim" class="mc">The Elder Scrolls V: Skyrim</button>
+                    <button id="darkS" class="mc">Dark Souls 1</button>
+                    <button id="demonS" class="mc">Demon's Souls</button>
+                    <button id="borderlands" class="mc">Borderlands</button>
+                    <br>
+                    <p id='result'></p>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>How many filler episodes did Naruto Shippuden have?</h3>
+                <input id="openAnswer" type="text" placeholder="Answer" backgroundColor="green">
+                <button id="mySubmit">Submit</button>
+                <p id="result2"></p>
+            </div>
+        </div>
+        <script>
+
+            //script for checking the answers of the multiple choice trivia
+
+            let buttons = document.querySelectorAll('button.mc');
+
+            for (let i = 0; i < buttons.length; i++)
+            {
+                buttons[i].addEventListener('click', function() {
+                    if (this.id != 'demonS')
+                    {
+                        this.style.backgroundColor = 'red';
+                        document.querySelector('#result').innerHTML = "WRONG!!!!";
+                        let changeColor = () =>
+                        {
+                            this.style.backgroundColor = '#d9edff';
+                        }
+                        setTimeout(changeColor, 1000)
+                    }
+                    else
+                    {
+                        this.style.backgroundColor = 'green';
+                        document.querySelector('#result').innerHTML = "CORRECT!!!!";
+                        let changeColor = () =>
+                        {
+                            this.style.backgroundColor = '#d9edff';
+                        }
+                        setTimeout(changeColor, 1000)
+                    }
+                });
+            }
+
+            //script for checking the answer of the open trivia
+
+            let answer;
+            document.getElementById('mySubmit').onclick = function(){
+                answer =  document.getElementById("openAnswer").value;
+                if (answer == '203') {
+                    document.querySelector("#result2").innerHTML = "CORRECT!!!!";
+                    document.querySelector("#openAnswer").style.backgroundColor = '#C6C67F';
+                    let changeColor = () =>
+                        {
+                            document.querySelector("#openAnswer").style.backgroundColor = '#d9edff';
+                        }
+                    setTimeout(changeColor, 2000)
+                }
+                else {
+                    document.querySelector("#result2").innerHTML = "WRONG!!!!";
+                    document.querySelector("#openAnswer").style.backgroundColor = '#D98787';
+                    let changeColor = () =>
+                        {
+                            document.querySelector("#openAnswer").style.backgroundColor = '#d9edff';
+                        }
+                    setTimeout(changeColor, 2000)
+                }
+            }
+        </script>
+    </body>
+</html>

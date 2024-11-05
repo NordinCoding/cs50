@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+<div>
+    <form action="/sell", method="POST">
+        <h2>What stock would you like to sell?</h2>
+        <br>
+        <select name="symbol">
+            <option value="" disabled selected>Select Symbol</option>
+            {% for portfolio in portfolios %}
+            <option>
+                {{portfolio['symbol']}}
+            </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="number" name="shares" placeholder="shares">
+        <br><br>
+        <button class="btn btn-dark rounded-pill px-3" type="submit">Sell</button>
+    </form>
+</div>
+{% endblock %}

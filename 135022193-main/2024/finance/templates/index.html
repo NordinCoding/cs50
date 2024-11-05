@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block main %}
+    <div>
+        <p>TEST</p>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">TOTAL</th>
+                </tr>
+            </thead>
+            <!-- loop over database to get values -->
+            <tbody>
+                {% for purchase in purchases %}
+                {% set TOTAL = purchase['price'] * purchase['shares'] %}
+                <tr>
+                    <td class="text-start">
+                        {{purchase['symbol']}}
+                    </td>
+                    <td class="text-end">
+                        {{purchase['shares']}}
+                    </td>
+                    <td class="text-end">
+                        ${{purchase['price']}}
+                    </td>
+                    <td class="text-end">
+                        {{ "$%.2f"|format(TOTAL) }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
+                    <td class="border-0 text-end">
+                        {{ "$%.2f"|format(cash[0]['cash'])}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+                    <td class="border-0 text-end">
+                        {{ "$%.2f"|format(sum) }}
+                    </td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{
+    "gitdoc.enabled": true,
+    "files.associations": {
+        "*.tcc": "c",
+        "stdlib.h": "c",
+        "cs50.h": "c",
+        "string": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "string_view": "c",
+        "cmath": "c",
+        "array": "c",
+        "unordered_map": "c",
+        "memory": "c",
+        "ostream": "c",
+        "streambuf": "c",
+        "functional": "c",
+        "tuple": "c",
+        "stdbool.h": "c",
+        "deque": "c",
+        "vector": "c",
+        "iterator": "c"
+    }
+}

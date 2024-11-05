@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: its super fast on sorted which makes sense because it will only need to do one loop and then return that its sorted. but significantly slower on the other lists
+
+sort2 uses: merge sort
+
+How do you know?: Noticeably way faster than selection sort and bubble sort. Also no difference between random and reversed
+
+sort3 uses: selection sort
+
+How do you know?: No noticeable difference between random and reversed, also process of elimination.

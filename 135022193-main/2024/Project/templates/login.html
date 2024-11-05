@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <div class="containerL">
+        <form style="text-align:center;" action="/login" method="POST">
+            <div class="loginInput">
+                <h1 style="color:white;">Login</h1>
+                <br>
+                <input class="usernameInput" type="text" name="username" placeholder="username">
+                <br>
+                <input class="passwordInput" type="password" name="password" placeholder="password">
+                <br>
+                <button class="button loginButton" type="SUBMIT">Login</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

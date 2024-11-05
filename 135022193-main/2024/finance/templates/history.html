@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block main %}
+    <div>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-middle">Transaction Type</th>
+                    <th class="text-middle">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">Time</th>
+                </tr>
+            </thead>
+            <!-- loop over database to get values -->
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td class="text-start">
+                        {{transaction['symbol']}}
+                    </td>
+                    <td class="text-middle">
+                        {{transaction['transaction_type']}}
+                    </td>
+                    <td class="text-middle">
+                        {{transaction['shares']}}
+                    </td>
+                    <td class="text-end">
+                        {{transaction['price'] | usd}}
+                    </td>
+                    <td class="text-end">
+                        {{transaction['time']}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

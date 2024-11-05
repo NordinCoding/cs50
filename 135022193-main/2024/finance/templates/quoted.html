@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+
+{% block main %}
+    <div>
+        <p id="symbolValue">A share of {{dict["symbol"]}} ({{dict["symbol"]}}) costs {{dict["price"]}}</p>
+        <a class="btn btn-primary" href="/quote">Lookup another stock</a>
+    </div>
+{% endblock %}

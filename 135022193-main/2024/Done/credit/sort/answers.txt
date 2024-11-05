@@ -1,0 +1,14 @@
+sort1 uses: bubble sort
+
+How do you know?: Because the time for the sorted list is significantly less than the random and reversed lists, meaning it made one
+pass through and realised it was sorted and exited, which makes it Omega(n) which only falls under bubble sort
+
+sort2 uses: merge sort
+
+How do you know?: There is no significicant difference between 5000, 10000 and 50000 compared to the other 2, which makes me think
+that this is a log(n) algorithm which is merge sort
+
+sort3 uses: selection sort
+
+How do you know?: It is faster than sort1 except when the list is already sorted, the list being sorted makes no difference
+in runtime, which to me means that Big O and Big Omega are identical, which falls under selection sort
